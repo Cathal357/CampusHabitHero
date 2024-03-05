@@ -1,0 +1,84 @@
+/* Home.css */
+.home {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .home-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #ffffff; /* Or the color of your header background */
+    align-items: center;
+  }
+  
+  .home-logo {
+    /* Style your logo here */
+  }
+  
+  .home-nav {
+    /* Navigation buttons styling */
+  }
+  
+  .home-nav-button {
+    margin-left: 10px;
+  }
+  
+  .home-hero {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .home-title {
+    /* Style your main title here */
+  }
+  
+  .home-subtitle {
+    /* Style the subtitle text here */
+  }
+  
+  .home-button {
+    /* Style your button here */
+  }
+  
+  .home-features {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .home-feature {
+    /* Style your feature blocks here */
+  }
+  
+  .home-feature-icon {
+    /* Add styles for your icons here */
+  }
+  
+  .home-footer {
+    margin-top: auto;
+    padding: 1rem;
+    background-color: #000000; /* Or your footer background color */
+    color: #ffffff;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .footer-link {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Add additional styling as needed to match the design */
+  
