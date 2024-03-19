@@ -1,10 +1,9 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import ResourceHub from './pages/ResourceHub';
@@ -13,29 +12,35 @@ import FAQs from './pages/FAQs';
 import ContactForm from './pages/ContactForm';
 import Deadlines from './pages/Deadlines';
 import HabitTracking from './pages/HabitTracking';
-import { AuthProvider } from './components/AuthContext';
+import { UserContextProvider } from './context/userContext';
+import { Toaster } from 'react-hot-toast';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.withCredentials = true
 
 function App() {
   return (
-    <AuthProvider>
-      <Header />
+    <UserContextProvider>
       <Router>
+        <Header />
+        <Toaster position='bottom-right' toastOptions={{ duration: 6000 }} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/deadlines" element={<Deadlines />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/resource-hub" element={<ResourceHub />} />
           <Route path="/about" element={<About />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/habit-tracking" element={<HabitTracking />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
-    </AuthProvider>
+    </UserContextProvider>
   );
 }
 

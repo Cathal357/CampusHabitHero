@@ -3,9 +3,10 @@ import '../App.css'; // Make sure to create a Home.css file for styling
 
 function Home() {
   return (
+    
     <div className="home">
       {/* Header Section */}
-
+      <title>Home Page</title>
       
       {/* Hero Section */}
       <section className="home-hero">

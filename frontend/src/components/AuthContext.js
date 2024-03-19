@@ -1,22 +1,26 @@
-// frontend/src/components/AuthContext.js
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-import React, { createContext, useState, useContext } from 'react';
-
-const AuthContext = createContext({});
-
-export const useAuth = () => useContext(AuthContext);
+const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const login = (userData) => {
-    setUser(userData);
-    // Persist login state through localStorage/sessionStorage or cookies
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Optionally verify token validity with the backend here
+      setUser({ token }); // Minimal example; ideally, set more user details
+    }
+  }, []);
+
+  const login = (token) => {
+    localStorage.setItem('token', token);
+    setUser({ token });
   };
 
   const logout = () => {
+    localStorage.removeItem('token');
     setUser(null);
-    // Remove persisted login state
   };
 
   return (
@@ -25,3 +29,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export const useAuth = () => useContext(AuthContext);

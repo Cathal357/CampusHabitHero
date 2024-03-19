@@ -1,84 +1,36 @@
 /* Home.css */
-.home {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
   
-  .home-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #ffffff; /* Or the color of your header background */
-    align-items: center;
-  }
-  
-  .home-logo {
-    /* Style your logo here */
-  }
-  
-  .home-nav {
-    /* Navigation buttons styling */
-  }
-  
-  .home-nav-button {
-    margin-left: 10px;
-  }
-  
-  .home-hero {
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  .home-title {
-    /* Style your main title here */
-  }
-  
-  .home-subtitle {
-    /* Style the subtitle text here */
-  }
-  
-  .home-button {
-    /* Style your button here */
-  }
-  
-  .home-features {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .home-feature {
-    /* Style your feature blocks here */
-  }
-  
-  .home-feature-icon {
-    /* Add styles for your icons here */
-  }
-  
-  .home-footer {
-    margin-top: auto;
-    padding: 1rem;
-    background-color: #000000; /* Or your footer background color */
-    color: #ffffff;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .footer-link {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 1rem;
-  }
-  
-  /* Add additional styling as needed to match the design */
-  
+
+/* This rule targets the links/buttons within a flex container */
+.header-links {
+  display: flex; /* Ensure header-links is a flex container */
+  justify-content: space-around; /* Distribute space around the links */
+} 
+
+.header-links > a,  
+.header-links > button {
+    margin: 9;  /* Reset default margins on links and buttons */
+}
+
+.container {
+  margin-top: 100px; /* Adjust the margin as needed */
+}
+
+.flex.flex-col.border.rounded-lg.p-4 {
+  margin-top: 20px; /* Add margin between heading and the card */
+}
+
+
+.habit-section { /* Add a more specific class */
+  margin-top: 200px; /* Adjust the spacing from the top */
+}
+
+
+.habit-card {
+  margin-bottom: 20px; /* Spacing between habit cards */
+}

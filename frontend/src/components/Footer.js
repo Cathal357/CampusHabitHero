@@ -1,58 +1,27 @@
-import React, { useState } from 'react';
+import React from "react";
+import { Link } from "react-router-dom"; // Import the Link component
 
 const Footer = () => {
-  const [isCollapsed, setIsCollapsed] = useState(false); // State to track collapse status
-
-  const toggleFooter = () => {
-    setIsCollapsed(!isCollapsed); // Toggle collapse state on button click
-  };
-
-  const hamburgerIconStyle = {
-    width: '24px',
-    height: '24px',
-    position: 'relative',
-    cursor: 'pointer',
-  };
-
-  const barStyle = {
-    width: '4px',
-    height: '50%',
-    backgroundColor: '#000', // Adjust color as needed
-    position: 'absolute',
-    left: '50%',
-    transform: 'translateX(-50%)',
-  };
-
   return (
-    <footer className={`text-gray-600 bg-gray-100 flex justify-end items-center p-4 ${isCollapsed ? 'collapsed' : ''}`}>
-      
-      <ul className={`list-none mr-4 ${isCollapsed ? 'hidden' : ''}`}>
-        <li className="inline mr-4">
-          <a href="#" className="text-decoration-none hover:text-gray-700">Features</a>
-        </li>
-        <li className="inline mr-4">
-          <a href="#" className="text-decoration-none hover:text-gray-700">Products</a>
-        </li>
-        <li className="inline mr-4">
-          <a href="#" className="text-decoration-none hover:text-gray-700">FAQs</a>
-        </li>
-        <li className="inline mr-4">
-          <a href="#" className="text-decoration-none hover:text-gray-700">Contact Us</a>
-        </li>
-      </ul>
-
-      <button
-        onClick={toggleFooter}
-        id="hamburgerButton"
-        className="focus:outline-none"
-        style={hamburgerIconStyle}
-      >
-        <div style={barStyle} />
-        <div style={{ ...barStyle, top: '50%' }} />
-      </button>
-
+    <footer className="text-black-600 flex justify-end items-center p-4 fixed bottom-0 w-full">
+      <nav aria-label="Footer navigation"> {/* Added nav tag for accessibility */}
+        <ul className="list-none mr-4">
+          <li className="inline mr-4">
+            <Link to="/about" className="text-decoration-none hover:text-black-700 font-bold text-sm">About</Link> 
+          </li>
+          <li className="inline mr-4">
+            <Link to="/faqs" className="text-decoration-none hover:text-black-700 font-bold text-sm">FAQs</Link> 
+          </li>
+          <li className="inline mr-4">
+            <Link to="/contact" className="text-decoration-none hover:text-black-700 font-bold text-sm">Contact Us</Link> 
+          </li>
+          <li className="inline">
+            <Link to="#" className="text-decoration-none hover:text-black-700 font-bold text-sm">#</Link> 
+          </li>
+        </ul>
+      </nav>
     </footer>
   );
-};
+}
 
 export default Footer;
